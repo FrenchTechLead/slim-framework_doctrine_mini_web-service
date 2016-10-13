@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Authentification</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+    <div class="col-md-4 col-md-offset-4">
+        <div class="well">
+           <h2 style="margin-left: 50px; margin-right: 50px"> Se connecter</h2>
+            <img src="https://www.osstf.on.ca/Content/Images/login.png" class="img-circle center-block" width="170px" height="170px">
+            <form id="connection_form">
+                <div class="form-group">
+                    <label for="email" class="control-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="control-label">Mot de passe</label>
+                    <input type="password" class="form-control" id="password" placeholder="mot de passe" required >
+                </div><br>
+                <button type="submit" class="btn-primary btn-block btn-lg" name="connect" id="connect"> Go !</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script type="application/javascript">
+    $("#connection_form").on('submit',function(e){
+        e.preventDefault();
+
+        var email = $( "#email" ).val();
+        var pass = $( "#password" ).val();
+        $.ajax({
+            url : '/',
+            type : 'POST', // Le type de la requête HTTP, ici devenu POST
+            data : 'email=' + email + '&pass=' + pass, // On fait passer nos variables
+            method : "POST",
+            dataType : 'json',
+            success : function(json, statut){
+                if(json.connection == "success" && json.position=="superuser")window.location.href = "/superuser";
+                else if(json.connection == "success" && json.position=="user")window.location.href = "/user";
+                else {
+                    $(".form-group").addClass("has-error");
+                    console.log(json);
+                }
+            },
+
+            error : function(json, statut, erreur){
+                $(".form-group").addClass("has-error");
+                console.log(json);
+            },
+
+            complete : function(resultat, statut){
+
+            }
+        })
+    });
+</script>
+
+</body>
+</html>

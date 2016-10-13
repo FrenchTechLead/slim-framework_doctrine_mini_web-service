@@ -1,0 +1,41 @@
+{
+    "name": "slim/slim-skeleton",
+    "description": "A Slim Framework skeleton application for rapid development",
+    "keywords": ["microframework", "rest", "router", "psr7"],
+    "homepage": "http://github.com/slimphp/Slim-Skeleton",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Josh Lockhart",
+            "email": "info@joshlockhart.com",
+            "homepage": "http://www.joshlockhart.com/"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0",
+        "slim/slim": "*",
+        "slim/php-view": "*",
+        "monolog/monolog": "*",
+        "symfony/class-loader": "*",
+        "symfony/console": "*",
+        "doctrine/common": "*",
+        "doctrine/dbal": "*",
+        "doctrine/orm": "*",
+        "doctrine/doctrine-bundle": "*"
+
+    },
+    "autoload": {
+        "psr-4": {
+            "Tests\\": "tests/",
+            "App\\": "src/App",
+            "App\\Controllers\\": "src/App/Controllers/",
+            "App\\Entities\\": "src/App/Entities/"
+        }
+    },
+    "COMPOSER_PROCESS_TIMEOUT":9999,
+	"scripts": {
+        "start": ["composer dump-autoload","php -S 0.0.0.0:8080 -t public public/index.php"],
+        "test": "phpunit"
+	}
+
+}
