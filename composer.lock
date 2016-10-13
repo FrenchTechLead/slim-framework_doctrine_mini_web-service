@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "06d610aaca71726d5696d69828d454ed",
-    "content-hash": "00cfc3fef0f0015f7ab9d066ebf62347",
+    "hash": "cf189d3729d68c9cc894d1f92ecbd34d",
+    "content-hash": "acf5f1e5b5aa389aab336c0d3e564ebe",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -801,6 +801,107 @@
                 "orm"
             ],
             "time": "2016-09-10 18:51:13"
+        },
+        {
+            "name": "gamringer/php-json-patch",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gamringer/JSONPatch.git",
+                "reference": "b83ded1d6c4495dc41305df85fda2be1748ec34c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gamringer/JSONPatch/zipball/b83ded1d6c4495dc41305df85fda2be1748ec34c",
+                "reference": "b83ded1d6c4495dc41305df85fda2be1748ec34c",
+                "shasum": ""
+            },
+            "require": {
+                "gamringer/php-json-pointer": "~3.1",
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "pdepend/pdepend": "@stable",
+                "phpmd/phpmd": "@stable",
+                "phpunit/phpunit": "@stable",
+                "sebastian/phpcpd": "@stable",
+                "squizlabs/php_codesniffer": "@stable"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "gamringer\\JSONPatch\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Guillaume Amringer",
+                    "email": "g.amringer@gmail.com"
+                }
+            ],
+            "description": "PHP JSON Patch (RFC6902) implementation",
+            "homepage": "https://github.com/gamringer/JSONPatch",
+            "keywords": [
+                "6902",
+                "RFC6902",
+                "json",
+                "json patch"
+            ],
+            "time": "2015-09-19 02:00:23"
+        },
+        {
+            "name": "gamringer/php-json-pointer",
+            "version": "3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gamringer/JSONPointer.git",
+                "reference": "866d808a0a26016888bd9624bb591592412067de"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gamringer/JSONPointer/zipball/866d808a0a26016888bd9624bb591592412067de",
+                "reference": "866d808a0a26016888bd9624bb591592412067de",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "pdepend/pdepend": "@stable",
+                "phpmd/phpmd": "@stable",
+                "phpunit/phpunit": "@stable",
+                "sebastian/phpcpd": "@stable",
+                "squizlabs/php_codesniffer": "@stable"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "gamringer\\JSONPointer\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Guillaume Amringer",
+                    "email": "g.amringer@gmail.com"
+                }
+            ],
+            "description": "PHP JSON Pointer (RFC6901) implementation",
+            "homepage": "https://github.com/gamringer/JSONPointer",
+            "keywords": [
+                "6901",
+                "RFC6901",
+                "json",
+                "json pointer"
+            ],
+            "time": "2015-08-28 11:00:36"
         },
         {
             "name": "jdorn/sql-formatter",

@@ -10,8 +10,6 @@ class AuthentificationController extends Controller
 {
     public function index( Request $request, Response $response){
 
-        //$response->render("index.html");
-
         $this->container->renderer->render($response, "index.html");
 
     }
