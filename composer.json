@@ -22,7 +22,8 @@
         "doctrine/common": "*",
         "doctrine/dbal": "*",
         "doctrine/orm": "*",
-        "doctrine/doctrine-bundle": "*"
+        "doctrine/doctrine-bundle": "*",
+        "firebase/php-jwt": "^4.0"
 
     },
     "autoload": {
