@@ -6,7 +6,7 @@ use Slim\Http\Response as Response;
 
 
 
-$app->post('/v1/authentificate', 'AuthentificationController:checkUser');
+$app->post('/v1/authentificate', 'AuthentificationController:checkUser')->setName('authentificate');
 
-$app->get('/v1/user/forms', 'UserController:getForms');
+$app->get('/v1/empty_forms/all', 'UserController:getForms')->setName('getAllForms');
 

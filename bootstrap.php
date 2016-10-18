@@ -15,7 +15,7 @@ $dbParams = array(
     'path'     => $settings['settings']['doctrine']['connection']['path'],
 );
 
-$config = Setup::createAnnotationMetadataConfiguration($paths, $isDevMode);
+$config = Setup::createAnnotationMetadataConfiguration($paths, $isDevMode, null, null, false);
 $entityManager = EntityManager::create($dbParams, $config);
 
 function GetEntityManager()  {

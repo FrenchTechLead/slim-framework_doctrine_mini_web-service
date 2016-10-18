@@ -3,7 +3,6 @@
 namespace App\Controllers;
 use \App\Entities\User as User;
 use \Firebase\JWT\JWT as JWT;
-use \Firebase\JWT\ExpiredException;
 
 class JWTController
 {
@@ -14,7 +13,7 @@ class JWTController
         //$tokenId    = base64_encode(mcrypt_create_iv(32));
         $issuedAt = time();
         $notBefore = $issuedAt ;             //Adding 10 seconds
-        $expire = $issuedAt + (5);            // The token expires after 5 minutes
+        $expire = $issuedAt + (5*60*60*60);            // The token expires after 5 hours
         $serverName = "akram.fr"; // Retrieve the server name from config file
 
         /*
@@ -33,12 +32,6 @@ class JWTController
         ];
 
 
-        /*
-         * Encode the array to a JWT string.
-         * Second parameter is the key to encode the token.
-         *
-         * The output string can be validated at http://jwt.io/
-         */
         $jwt = JWT::encode(
             $data,      //Data to be encoded in the JWT
             JWTController::$secretKey, // The signing key
@@ -50,24 +43,6 @@ class JWTController
     }
 
 
-    public static function validateToken(\Slim\http\Request $request ){
-
-        $headerObject = $request->getHeader('authorization')[0];
-        $jwt = json_decode($headerObject)->jwt;
-
-        if ($jwt != NULL) { //checking that the header contains Authorization field
-
-            try{
-                $token =  JWT::decode($jwt, JWTController::$secretKey, array('HS512'));
-            }catch (Exception $e){
-                return array("connection"=>"fail", "error"=>$e->getMessage());
-            }
-
-        } else {
-            return array("connection"=>"fail", "error"=>"Token not found in the request, the token should be added to Authorization header");
-        }
-
-    }
     public static function decodeToken(\Slim\http\Request $request){
         $headerObject = $request->getHeader('authorization')[0];
         $jwt = json_decode($headerObject)->jwt;

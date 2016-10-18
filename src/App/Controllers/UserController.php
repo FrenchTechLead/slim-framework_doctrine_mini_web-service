@@ -15,7 +15,6 @@ class UserController extends Controller
 
     public function getForms(Request $request, Response $response){
         $responseArray = [];
-        JWTController::validateToken($request);
         $token = JWTController::decodeToken($request, $response);
         $userId = $token->data->userId;
 
