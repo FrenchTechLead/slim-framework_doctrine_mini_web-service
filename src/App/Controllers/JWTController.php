@@ -3,6 +3,7 @@
 namespace App\Controllers;
 use \App\Entities\User as User;
 use \Firebase\JWT\JWT as JWT;
+use Slim\Http\Request;
 
 class JWTController
 {
@@ -48,5 +49,14 @@ class JWTController
         $jwt = json_decode($headerObject)->jwt;
         $token =  JWT::decode($jwt, JWTController::$secretKey, array('HS512'));
         return $token;
+    }
+
+    public static function getUserFromRequest(Request $request, $em){
+        $token = self::decodeToken($request);
+        $userId = $token->data->userId;
+
+        $usersEntity = $em->getRepository("App\Entities\User");
+        $user = $usersEntity->findBy(array("id"=>$userId))[0];
+        return $user;
     }
 }

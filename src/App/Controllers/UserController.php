@@ -15,14 +15,14 @@ class UserController extends Controller
 
     public function getForms(Request $request, Response $response){
         $responseArray = [];
-        $token = JWTController::decodeToken($request, $response);
-        $userId = $token->data->userId;
 
         /** @var em $em */
         $em = $this->container->em;
+        $user = JWTController::getUserFromRequest($request, $em);
+        $responseArray["connected_user"]=array("id"=>$user->getId(), "email"=>$user->getEmail());
+
         $usersEntity = $em->getRepository("App\Entities\User");
-        $user = $usersEntity->findBy(array("id"=>$userId))[0];
-        $responseArray["userEmail"]= $user->getEmail();
+
         if($user != null){
             return $response->withJson($responseArray);
         }else{
