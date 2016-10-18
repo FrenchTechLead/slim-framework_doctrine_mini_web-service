@@ -3,17 +3,18 @@
 namespace App\Controllers;
 use \App\Entities\User as User;
 use \Firebase\JWT\JWT as JWT;
+use \Firebase\JWT\ExpiredException;
 
 class JWTController
 {
     static $secretKey = "just_a_stupid_key_now";
 
-    public static function createToken(User $user)
-    {
+    public static function createToken(User $user){
+
         //$tokenId    = base64_encode(mcrypt_create_iv(32));
         $issuedAt = time();
-        $notBefore = $issuedAt + 10;             //Adding 10 seconds
-        $expire = $notBefore + 60;            // Adding 60 seconds
+        $notBefore = $issuedAt ;             //Adding 10 seconds
+        $expire = $issuedAt + (5);            // The token expires after 5 minutes
         $serverName = "akram.fr"; // Retrieve the server name from config file
 
         /*
@@ -49,22 +50,28 @@ class JWTController
     }
 
 
-    public static function validateToken(\Slim\http\Request $request,\Slim\http\Response $response )
-    {
-        $authHeader = $request->getHeader('authorization');
-        if ($authHeader) {
+    public static function validateToken(\Slim\http\Request $request ){
 
-            $jwt = $authHeader[0];
-            $jwt = json_decode($jwt)->jwt;
+        $headerObject = $request->getHeader('authorization')[0];
+        $jwt = json_decode($headerObject)->jwt;
 
-            if ($jwt) { //checking that the header contains Authorization field
-                $token = JWT::decode($jwt, JWTController::$secretKey, array('HS512'));
-                var_dump($token);die;
+        if ($jwt != NULL) { //checking that the header contains Authorization field
 
-            } else {
-                return $response->withJson(array("connection"=>"fail", "error"=>"Token not found in the request, the token should be added to Authorization header"),403);
+            try{
+                $token =  JWT::decode($jwt, JWTController::$secretKey, array('HS512'));
+            }catch (Exception $e){
+                return array("connection"=>"fail", "error"=>$e->getMessage());
             }
 
+        } else {
+            return array("connection"=>"fail", "error"=>"Token not found in the request, the token should be added to Authorization header");
         }
+
+    }
+    public static function decodeToken(\Slim\http\Request $request){
+        $headerObject = $request->getHeader('authorization')[0];
+        $jwt = json_decode($headerObject)->jwt;
+        $token =  JWT::decode($jwt, JWTController::$secretKey, array('HS512'));
+        return $token;
     }
 }

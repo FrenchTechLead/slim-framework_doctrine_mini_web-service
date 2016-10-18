@@ -11,10 +11,6 @@ namespace App\Controllers;
 
 class SuperUserController extends Controller
 {
-    public function index( $request, $response){
 
 
-        return $this->container->renderer->render($response, "superuser.html");
-
-    }
 }

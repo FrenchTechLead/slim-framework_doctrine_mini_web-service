@@ -9,11 +9,7 @@ use \App\Controllers\JWTController as JWTController;
 
 class AuthentificationController extends Controller
 {
-    public function index( Request $request, Response $response){
 
-        $this->container->renderer->render($response, "index.html");
-
-    }
 
     public function checkUser(Request $request, Response $response){
 
