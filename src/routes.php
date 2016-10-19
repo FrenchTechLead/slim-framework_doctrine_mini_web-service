@@ -20,4 +20,7 @@ $app->patch('/v1/users/{id:\d+}', 'SuperUserController:modifyUser')->setName('mo
 
 $app->delete('/v1/users/{id:\d+}', 'SuperUserController:deleteUser')->setName('deleteUser');
 
+$app->post('/v1/form_version', 'SuperUserController:createNewFormVersion')->setName('createNewForm');
+
+$app->post('/v1/question/{form_id:\d+}', 'SuperUserController:createNewQuestion')->setName('createNewQuestion');
 

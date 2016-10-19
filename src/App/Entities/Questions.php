@@ -59,6 +59,13 @@ class Questions extends Entity{
     }
 
 
+    public function toArray(){
 
+        return array_merge(parent::toArray(),[
+        "related_form"=>$this->getForm()->getTitre(),
+        "question"=>$this->getQuestion(),
+
+        ]);
+    }
 
 }

@@ -89,4 +89,13 @@ abstract class Entity
     {
         return $this->updated;
     }
+
+    public function toArray(){
+        return [
+            "id"=>$this->id,
+            "creation_time"=>$this->getCreated(),
+            "last_update_time"=>$this->getUpdated()
+
+        ];
+    }
 }

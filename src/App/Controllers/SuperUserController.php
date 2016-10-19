@@ -132,6 +132,57 @@ class SuperUserController extends Controller{
 
         return $response->withJson($responseArray);
 
+    }
 
+    function createNewFormVersion(Request $request, Response $response){
+        $responseArray = [];
+        /** @var em $em */
+        $em = $this->container->em;
+        $connected_user = JWTController::getUserFromRequest($request, $em);
+        if($connected_user->getIs_superUser() != 1)return $response->withJson(array("connection"=>"fail", "error"=>"You are not a superUser"),403);
+        $responseArray["connected_user"]=array("id"=>$connected_user->getId(), "email"=>$connected_user->getEmail());
+
+        $fields = ['titre'];
+        $data = $request->getParsedBody();
+        $this->checkAllDataFields($data, $response,$fields); // just to check that all required data has been posted
+
+        $formVersion = new \App\Entities\FormVersions();
+        $formVersion->setCreator($connected_user);
+        $formVersion->setTitre($data["titre"]);
+        $formVersion->setVersion(0);
+
+        $em->persist($formVersion);
+        $em->flush();
+
+        return $response->withJson($formVersion->toArray());
+    }
+
+    function createNewQuestion(Request $request, Response $response, $args){
+        $responseArray = [];
+        /** @var em $em */
+        $em = $this->container->em;
+        $connected_user = JWTController::getUserFromRequest($request, $em);
+        if($connected_user->getIs_superUser() != 1)return $response->withJson(array("connection"=>"fail", "error"=>"You are not a superUser"),403);
+        $responseArray["connected_user"]=array("id"=>$connected_user->getId(), "email"=>$connected_user->getEmail());
+
+        $fields = ['question'];
+        $data = $request->getParsedBody();
+        $this->checkAllDataFields($data, $response,$fields); // just to check that all required data has been posted
+
+        $formVersionsRepository = $em->getRepository("App\Entities\FormVersions");
+        $relatedForm = $formVersionsRepository->find($args["form_id"]);
+        if($relatedForm == null)return $response->withJson(array("Operation"=>"fail", "error"=>"The form with the provided id (".$args["form_id"].") does not exist"),500);
+
+        $question = new \App\Entities\Questions();
+
+        $question->setQuestion($data["question"]);
+        $question->setForm($relatedForm);
+
+        $em->persist($question);
+        $em->flush();
+
+        $responseArray["created_question"]=$question->toArray();
+
+        return $response->withJson($responseArray);
     }
 }

@@ -84,6 +84,12 @@ class FormVersions extends Entity{
     }
 
 
-
+    public function toArray(){
+        return [
+          "id"=> $this->getId(),
+            "titre"=>$this->getTitre(),
+            "creator"=>$this->getCreator()->getEmail()
+        ];
+    }
 
 }
