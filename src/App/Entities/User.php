@@ -13,6 +13,7 @@ class User extends Entity
 {
     /**
      * @ORM\Column(type="string", length=255)
+     *
      * @var string
      */
     protected $email;

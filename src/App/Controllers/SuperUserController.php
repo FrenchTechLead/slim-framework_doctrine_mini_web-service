@@ -61,6 +61,10 @@ class SuperUserController extends Controller{
         $data = $request->getParsedBody();
         $this->checkAllDataFields($data, $response,$fields); // just to check that all required data has been posted
 
+        $checkEmailExists = $em->getRepository('App\Entities\User')
+            ->findOneBy(array('email' => $data["email"]));
+        if($checkEmailExists != null)return $response->withJson(array("connection"=>"fail", "error"=>"The email already exists"),500);
+
         $userToAdd = new \App\Entities\User();
         $userToAdd->setPassword($data["pass"]);
         $userToAdd->setEmail($data["email"]);
