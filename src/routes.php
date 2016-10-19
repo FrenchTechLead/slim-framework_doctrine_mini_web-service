@@ -16,3 +16,8 @@ $app->get('/v1/users/{id:\d+}', 'SuperUserController:getUser')->setName('getUser
 
 $app->post('/v1/users', 'SuperUserController:addUser')->setName('addUser');
 
+$app->patch('/v1/users/{id:\d+}', 'SuperUserController:modifyUser')->setName('modifyUser');
+
+$app->delete('/v1/users/{id:\d+}', 'SuperUserController:deleteUser')->setName('deleteUser');
+
+

@@ -65,9 +65,8 @@ class User extends Entity
 
     public function toArray(){
         return array(
-            "id"=>$this->getId(),
             "email"=>$this->getEmail(),
-            "is_superUser"=>$this->getIs_superuser()
+            "is_superuser"=>$this->getIs_superuser()
         );
     }
 }
