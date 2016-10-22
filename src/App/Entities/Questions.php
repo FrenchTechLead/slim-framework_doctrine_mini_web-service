@@ -12,8 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Questions extends Entity{
     /**
-     * @ORM\ManyToOne(targetEntity="\App\Entities\FormVersions")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity="\App\Entities\FormVersions", inversedBy="questions")
+     * @ORM\JoinColumn(name="form_id", nullable=false, referencedColumnName="id", onDelete="CASCADE")
      */
     private $form;
 
@@ -37,7 +37,7 @@ class Questions extends Entity{
     /**
      * @param mixed $form
      */
-    public function setForm($form)
+    public function setForm( FormVersions $form)
     {
         $this->form = $form;
     }
@@ -55,7 +55,7 @@ class Questions extends Entity{
      */
     public function setQuestion($question)
     {
-        $this->question = $question;
+        $this->question = htmlspecialchars($question);
     }
 
 

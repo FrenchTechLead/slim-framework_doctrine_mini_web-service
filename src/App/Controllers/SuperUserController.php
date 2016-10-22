@@ -123,6 +123,7 @@ class SuperUserController extends Controller{
 
         $userToPatch->setEmail($userToPatchArray["email"]);
         $userToPatch->setIs_superuser($userToPatchArray["is_superuser"]);
+        $userToPatch->setUpdated(new \DateTime());
 
         $em->persist($userToPatch);
         $em->flush();
@@ -177,6 +178,7 @@ class SuperUserController extends Controller{
 
         $question->setQuestion($data["question"]);
         $question->setForm($relatedForm);
+        $relatedForm->setUpdated(new \DateTime()); // updating the update time when adding a question to the form
 
         $em->persist($question);
         $em->flush();
@@ -185,4 +187,50 @@ class SuperUserController extends Controller{
 
         return $response->withJson($responseArray);
     }
+
+    public function deleteFormVersion(Request $request, Response $response, $args){
+        $responseArray = [];
+        /** @var em $em */
+        $em = $this->container->em;
+        $user = JWTController::getUserFromRequest($request, $em);
+        if($user->getIs_superUser() != 1)return $response->withJson(array("connection"=>"fail", "error"=>"You are not a superUser"),403);
+        $responseArray["connected_user"]=array("id"=>$user->getId(), "email"=>$user->getEmail());
+
+        $formVersionsRepository = $em->getRepository("App\Entities\FormVersions");
+        $formToDelete = $formVersionsRepository->find($args["form_id"]);
+        if($formToDelete == null || $formToDelete->getId() == 0)return $response->withJson(array("Operation"=>"fail", "error"=>"The form with the provided id (".$args["form_id"].") does not exist"),500);
+
+        $responseArray["form_deleted"] = $formToDelete->toArray();
+        $em->remove($formToDelete); // deleting a form will delete all it's related questions thanks to cascade
+        $em->flush();
+
+        return $response->withJson($responseArray);
+
+    }
+
+    public function getFormwhithQuestions(Request $request, Response $response, $args){
+        $responseArray = [];
+        /** @var em $em */
+        $em = $this->container->em;
+        $user = JWTController::getUserFromRequest($request, $em);
+        if($user->getIs_superUser() != 1)return $response->withJson(array("connection"=>"fail", "error"=>"You are not a superUser"),403);
+        $responseArray["connected_user"]=array("id"=>$user->getId(), "email"=>$user->getEmail());
+
+        $formVersionsRepository = $em->getRepository("App\Entities\FormVersions");
+        $requestedForm = $formVersionsRepository->find($args["form_id"]);
+        if($requestedForm == null || $requestedForm->getId() == 0)return $response->withJson(array("Operation"=>"fail", "error"=>"The form with the provided id (".$args["form_id"].") does not exist"),500);
+
+        $responseArray["requested_form"] = $requestedForm->toArray();
+
+        //$questionsRepository = $em->getRepository("App\Entities\Questions");
+        //$associatedQuestions = $questionsRepository->findOneBy(["form"=>$requestedForm]);
+        //var_dump($associatedQuestions->toArray());die;
+
+        //$responseArray["associated_questions"] = $associatedQuestions->toArray();
+
+        return $response->withJson($responseArray);
+
+    }
+
+
 }

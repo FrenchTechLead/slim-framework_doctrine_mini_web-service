@@ -42,7 +42,7 @@ class User extends Entity
 
     public function setEmail($email)
     {
-        $this->email = strtolower($email);
+        $this->email = htmlspecialchars(strtolower($email));
     }
 
     public function getPassword()
@@ -64,9 +64,9 @@ class User extends Entity
     }
 
     public function toArray(){
-        return array(
+        return array_merge(parent::toArray(),[
             "email"=>$this->getEmail(),
             "is_superuser"=>$this->getIs_superuser()
-        );
+        ]);
     }
 }

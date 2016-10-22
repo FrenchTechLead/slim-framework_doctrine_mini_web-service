@@ -36,7 +36,8 @@
     },
 	"scripts": {
         "start": ["composer dump-autoload","php -S 0.0.0.0:8080 -t public public/index.php"],
-        "test": "phpunit"
+        "test": "phpunit",
+        "update-database": "vendor/bin/doctrine orm:schema-tool:update --force"
 	}
 
 }

@@ -93,8 +93,8 @@ abstract class Entity
     public function toArray(){
         return [
             "id"=>$this->id,
-            "creation_time"=>$this->getCreated(),
-            "last_update_time"=>$this->getUpdated()
+            "creation_time"=>$this->getCreated()->format('d/m/Y H:i:s'),
+            "last_update_time"=>$this->getUpdated()->format('d/m/Y H:i:s')
 
         ];
     }

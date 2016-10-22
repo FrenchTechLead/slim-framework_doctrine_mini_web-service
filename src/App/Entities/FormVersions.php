@@ -3,9 +3,9 @@
 namespace App\Entities;
 
 
-use Doctrine\ORM\Mapping as ORM;
+use \Doctrine\ORM\Mapping as ORM;
 use \App\Entity as Entity;
-
+use \Doctrine\Common\Collections\ArrayCollection as ArrayCollection;
 /**
  * @ORM\Entity
  * @ORM\Table(name="formVersions")
@@ -30,10 +30,24 @@ class FormVersions extends Entity{
      */
     private $creator;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Questions", mappedBy="form", cascade={"persist","remove"})
+     */
+    private $questions;
+
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->questions = new ArrayCollection();
+    }
 
 
 
-
+    public function addQuestion(Questions $qestion){
+        $this->qestions[] = $qestion;
+        $qestion->setForm($this);
+    }
 
     /**
      * @return string
@@ -83,13 +97,38 @@ class FormVersions extends Entity{
         $this->creator = $creator;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getQuestions()
+    {
+        return $this->questions;
+    }
+
+    /**
+     * @param mixed $questions
+     */
+    public function setQuestions($questions)
+    {
+        $this->questions = $questions;
+    }
+
+
+
 
     public function toArray(){
-        return [
+        $questions = $this->getQuestions()->toArray();
+        $questionsParsedArray = [];
+        foreach ($questions as $q){
+            $questionsParsedArray[$q->getId()]=$q->toArray();
+        }
+
+        return array_merge(parent::toArray(),[
           "id"=> $this->getId(),
             "titre"=>$this->getTitre(),
-            "creator"=>$this->getCreator()->getEmail()
-        ];
+            "creator"=>$this->getCreator()->getEmail(),
+            "questions"=>$questionsParsedArray
+        ]);
     }
 
 }
