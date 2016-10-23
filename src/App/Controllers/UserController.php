@@ -64,6 +64,10 @@ class UserController extends Controller{
         }
         if(! $check)return $response->withJson(["Operation"=>"fail","message"=>"The question with the provided id (".$data["question_id"].") is not part of the form provided id (".$args["linked_form_id"].")"],500);
 
+        $answersRepository = $em->getRepository("\App\Entities\Answers");
+        $potentialExistingAnswer = $answersRepository->findBy(["question"=>$linkedQuestion, "formAnswered"=>$linkedForm]);
+        if($potentialExistingAnswer != null) return $response->withJson(["Operation"=>"fail","message"=>"There is already an entry for this form and question, please try to patch or delete first"],500);
+
 
         $answer = new \App\Entities\Answers();
 
@@ -78,5 +82,24 @@ class UserController extends Controller{
 
         return $response->withJson($responseArray);
 
+    }
+
+    public function getFilledForm(Request $request, Response $response, $args){
+        $responseArray = [];
+        /** @var em $em */
+        $em = $this->container->em;
+        $connected_user = JWTController::getUserFromRequest($request, $em);
+        if($connected_user->getIs_superUser() == 1)return $response->withJson(array("connection"=>"fail", "error"=>"You are connected as admin."),403);
+        $responseArray["connected_user"]=array("id"=>$connected_user->getId(), "email"=>$connected_user->getEmail());
+
+        $answeredFormRepository = $em->getRepository("\App\Entities\FormAnswered");
+        $requestedForm = $answeredFormRepository->find($args["form_id"]);
+        if($requestedForm == null) return $response->withJson(["Operation"=>"fail","message"=>"The requested form with id = ".$args['form_id']." does not exist."],500);
+
+        if($requestedForm->getUser()->getId() != $connected_user->getId()) return $response->withJson(["Operation"=>"fail","message"=>"You need to be the author of this form to be able to consult it."],500);
+
+        $responseArray["requested_filled_form"]= $requestedForm->toArray();
+
+        return $response->withJson($responseArray);
     }
 }

@@ -28,6 +28,8 @@ $app->post('/v1/answered_form/{linked_form_id:\d+}', 'UserController:createFille
 
 $app->post('/v1/answer/{linked_form_id:\d+}', 'UserController:createAnswer')->setName('createAnswer');
 
+$app->get('/v1/answered_form/{form_id:\d+}', 'UserController:getFilledForm')->setName('getFilledForm');
+
 
 
 //formVersions opreration

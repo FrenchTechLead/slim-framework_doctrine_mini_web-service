@@ -90,9 +90,15 @@ class FormAnswered extends Entity{
 
 
     public function toArray(){
+        $answers = $this->getAnswers()->toArray();
+        $answersParsedArray = [];
+        foreach ($answers as $a){
+            $answersParsedArray[$a->getQuestion()->getQuestion()] = $a->getAnswer();
+        }
         return array_merge(parent::toArray(),[
             "created_by"=>$this->getUser()->getEmail(),
-            "linked_form"=>["titre"=>$this->getFormlinked()->getTitre(), "version"=>$this->getFormlinked()->getVersion()]
+            "linked_form"=>["titre"=>$this->getFormlinked()->getTitre(), "version"=>$this->getFormlinked()->getVersion()],
+            "content"=>$answersParsedArray
 
         ]);
 
