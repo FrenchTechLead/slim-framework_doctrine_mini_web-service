@@ -43,3 +43,39 @@ $app->post('/v1/question/{form_id:\d+}', 'SuperUserController:createNewQuestion'
 
 $app->delete('/v1/question/{question_id:\d+}', 'SuperUserController:deleteQuestion')->setName('deleteQuestion');
 
+
+
+// public routes
+$app->get('/', function( Request $request, Response $response) use ($app){
+    return $app->getContainer()->renderer->render($response, 'index.html')->withHeader("content-type","text/html");});
+
+$app->get('/bootstrap_css', function( Request $request, Response $response) use ($app){
+    return $app->getContainer()->renderer->render($response, 'css/bootstrap.min.css')->withHeader("content-type","text/css");});
+
+$app->get('/sweetAlert_css', function( Request $request, Response $response) use ($app){
+    return $app->getContainer()->renderer->render($response, 'css/sweetAlert.css')->withHeader("content-type","text/css");});
+
+$app->get('/bootstrap_theme_css', function( Request $request, Response $response) use ($app){
+
+    return $app->getContainer()->renderer->render($response, 'css/bootstrap-theme.min.css')->withHeader("content-type","text/css");});
+
+$app->get('/bootstrap_js', function( Request $request, Response $response) use ($app){
+    return $app->getContainer()->renderer->render($response, 'js/bootstrap.js')->withHeader("content-type","text/javascript");});
+
+$app->get('/sweetAlert_js', function( Request $request, Response $response) use ($app){
+    return $app->getContainer()->renderer->render($response, 'js/sweetAlert.js')->withHeader("content-type","text/javascript");});
+
+$app->get('/jquery', function( Request $request, Response $response) use ($app){
+    return $app->getContainer()->renderer->render($response, 'js/jquery.js')->withHeader("content-type","text/javascript");});
+
+$app->get('/myScripts', function( Request $request, Response $response) use ($app){
+    return $app->getContainer()->renderer->render($response, 'js/myScripts.js')->withHeader("content-type","text/javascript");});
+
+$app->get('/jquery_cookie', function( Request $request, Response $response) use ($app){
+    return $app->getContainer()->renderer->render($response, 'js/jquery_cookie.js')->withHeader("content-type","text/javascript");});
+
+$app->get('/user_space', function( Request $request, Response $response) use ($app){
+    return $app->getContainer()->renderer->render($response, 'user.html')->withHeader("content-type","text/html");});
+
+$app->get('/superuser_space', function( Request $request, Response $response) use ($app){
+    return $app->getContainer()->renderer->render($response, 'superuser.html')->withHeader("content-type","text/html");});

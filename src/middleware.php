@@ -5,10 +5,12 @@ use \Slim\Http\Response as Response;
 use \Firebase\JWT\JWT as JWT;
 use \App\Controllers\JWTController as JWTController;
 
+$public_routes = $settings["settings"]["public_routes"];
 
-$app->add(function (Request $request,Response $response, $next) use ($app){
+$app->add(function (Request $request,Response $response, $next) use ($app, $public_routes){
 
-    if($request->getRequestTarget() == "/v1/authentificate"){
+    $route = $request->getRequestTarget(); // these routes don't need Authentification
+    if(in_array($route,  $public_routes)){
         $response = $next($request, $response);
         return $response;
     }

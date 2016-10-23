@@ -28,7 +28,7 @@ class SuperUserController extends Controller{
         $allUsersArray = [];
 
         foreach ($allUsers as $key => $parameter) {
-            $allUsersArray[$parameter->getId()]=$parameter->toArray();
+            $allUsersArray["user_".$parameter->getId()]=$parameter->toArray();
         }
 
         $responseArray["all_users"]= $allUsersArray;
@@ -61,7 +61,7 @@ class SuperUserController extends Controller{
 
         $fields = ['email','pass', 'is_superuser'];
         $data = $request->getParsedBody();
-        if(! $this->checkAllDataFields($data,$fields))return $response->withJson(["error"=>["message"=>"Missing data"]],400);// just to check that all required data has been posted
+        //if(! $this->checkAllDataFields($data,$fields))return $response->withJson(["error"=>["message"=>"Missing data"]],400);// just to check that all required data has been posted
 
         $checkEmailExists = $em->getRepository('App\Entities\User')
             ->findOneBy(array('email' => $data["email"]));

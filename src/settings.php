@@ -10,6 +10,22 @@ return [
             'template_path' => __DIR__ . '/../templates/',
         ],
 
+        "public_routes"=>[
+            "/",
+            "/v1/authentificate",
+            "/user_space",
+            "/superuser_space",
+            "/bootstrap_css",
+            "/bootstrap_theme_css",
+            "/bootstrap_js",
+            "/jquery",
+            "/jquery_cookie",
+            "/myScripts",
+            "/sweetAlert_css",
+            "/sweetAlert_js"
+
+        ], // these routes don't need Authentification
+
         // Monolog settings
         'logger' => [
             'name' => 'slim-app',
