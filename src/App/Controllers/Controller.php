@@ -19,10 +19,11 @@ class Controller
         }
     }
 
-    public function checkAllDataFields($data, $response, $fields){
+    public function checkAllDataFields($data, $fields){
         foreach($fields as $f){
             if (empty($data[$f]))
-                return $response->withJson(["error"=>["message"=>"Missing data"]],400);
+                return false;
         }
+        return true;
     }
 }

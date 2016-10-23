@@ -61,7 +61,7 @@ class SuperUserController extends Controller{
 
         $fields = ['email','pass', 'is_superuser'];
         $data = $request->getParsedBody();
-        $this->checkAllDataFields($data, $response,$fields); // just to check that all required data has been posted
+        if(! $this->checkAllDataFields($data,$fields))return $response->withJson(["error"=>["message"=>"Missing data"]],400);// just to check that all required data has been posted
 
         $checkEmailExists = $em->getRepository('App\Entities\User')
             ->findOneBy(array('email' => $data["email"]));
@@ -145,7 +145,7 @@ class SuperUserController extends Controller{
 
         $fields = ['titre'];
         $data = $request->getParsedBody();
-        $this->checkAllDataFields($data, $response,$fields); // just to check that all required data has been posted
+        if(! $this->checkAllDataFields($data,$fields))return $response->withJson(["error"=>["message"=>"Missing data"]],400); // just to check that all required data has been posted
 
         $formVersion = new \App\Entities\FormVersions();
         $formVersion->setCreator($connected_user);
@@ -168,7 +168,7 @@ class SuperUserController extends Controller{
 
         $fields = ['question'];
         $data = $request->getParsedBody();
-        $this->checkAllDataFields($data, $response,$fields); // just to check that all required data has been posted
+        if(! $this->checkAllDataFields($data,$fields))return $response->withJson(["error"=>["message"=>"Missing data"]],400); // just to check that all required data has been posted
 
         $formVersionsRepository = $em->getRepository("App\Entities\FormVersions");
         $relatedForm = $formVersionsRepository->find($args["form_id"]);
@@ -222,11 +222,25 @@ class SuperUserController extends Controller{
 
         $responseArray["requested_form"] = $requestedForm->toArray();
 
-        //$questionsRepository = $em->getRepository("App\Entities\Questions");
-        //$associatedQuestions = $questionsRepository->findOneBy(["form"=>$requestedForm]);
-        //var_dump($associatedQuestions->toArray());die;
+        return $response->withJson($responseArray);
 
-        //$responseArray["associated_questions"] = $associatedQuestions->toArray();
+    }
+
+    public function deleteQuestion(Request $request, Response $response, $args){
+        $responseArray = [];
+        /** @var em $em */
+        $em = $this->container->em;
+        $user = JWTController::getUserFromRequest($request, $em);
+        if($user->getIs_superUser() != 1)return $response->withJson(array("connection"=>"fail", "error"=>"You are not a superUser"),403);
+        $responseArray["connected_user"]=array("id"=>$user->getId(), "email"=>$user->getEmail());
+
+        $questionsRepository = $em->getRepository("App\Entities\Questions");
+        $questionToDelete = $questionsRepository->find($args["question_id"]);
+        if($questionToDelete == null || $questionToDelete->getId() == 0)return $response->withJson(array("Operation"=>"fail", "error"=>"The form with the provided id (".$args["question_id"].") does not exist"),500);
+
+        $responseArray["question_deleted"] = $questionToDelete->toArray();
+        $em->remove($questionToDelete);
+        $em->flush();
 
         return $response->withJson($responseArray);
 

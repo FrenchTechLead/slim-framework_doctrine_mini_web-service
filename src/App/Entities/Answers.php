@@ -20,8 +20,8 @@ use Doctrine\ORM\Mapping as ORM;
 class Answers extends Entity{
 
     /**
-     * @ORM\ManyToOne(targetEntity="\App\Entities\FormAnswered")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity="\App\Entities\FormAnswered", inversedBy="answers")
+     * @ORM\JoinColumn(name="form_answered_id", nullable=false, referencedColumnName="id", onDelete="CASCADE")
      */
     private $formAnswered;
 
@@ -88,8 +88,15 @@ class Answers extends Entity{
         $this->answer = $answer;
     }
 
+    public function toArray()
+    {
+        return array_merge(parent::toArray(),[
+            "related_form_Answered"=>$this->formAnswered->getId(),
+            "related_question"=>$this->getQuestion()->getQuestion(),
+            "answer"=>$this->getAnswer()
 
-
+        ]);
+    }
 
 
 }

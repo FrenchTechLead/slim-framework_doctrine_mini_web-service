@@ -8,7 +8,9 @@ use Slim\Http\Response as Response;
 //Authentification
 $app->post('/v1/authentificate', 'AuthentificationController:checkUser')->setName('authentificate');
 
-// user operations
+
+
+// SuperUser operations
 $app->get('/v1/users', 'SuperUserController:getAllUsers')->setName('getAllUsers');
 
 $app->get('/v1/users/{id:\d+}', 'SuperUserController:getUser')->setName('getUser');
@@ -19,13 +21,23 @@ $app->patch('/v1/users/{id:\d+}', 'SuperUserController:modifyUser')->setName('mo
 
 $app->delete('/v1/users/{id:\d+}', 'SuperUserController:deleteUser')->setName('deleteUser');
 
-//formversions opreration
+
+
+//userOpérations
+$app->post('/v1/answered_form/{linked_form_id:\d+}', 'UserController:createFilledForm')->setName('createFilledForm');
+
+$app->post('/v1/answer/{linked_form_id:\d+}', 'UserController:createAnswer')->setName('createAnswer');
+
+
+
+//formVersions opreration
 $app->post('/v1/form_version', 'SuperUserController:createNewFormVersion')->setName('createNewForm');
 
 $app->delete('/v1/form_version/{form_id:\d+}', 'SuperUserController:deleteFormVersion')->setName('deleteFormVersion');
 
-$app->get('/v1/form_version/{form_id:\d+}', 'SuperUserController:getFormwhithQuestions')->setName('getFormwhithQuestions');
-// Answered Form operations
+$app->get('/v1/form_version/{form_id:\d+}', 'SuperUserController:getFormwhithQuestions')->setName('getFormWhithQuestions');
 
 $app->post('/v1/question/{form_id:\d+}', 'SuperUserController:createNewQuestion')->setName('createNewQuestion');
+
+$app->delete('/v1/question/{question_id:\d+}', 'SuperUserController:deleteQuestion')->setName('deleteQuestion');
 
