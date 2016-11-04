@@ -1,14 +1,14 @@
 {
-    "name": "slim/slim-skeleton",
-    "description": "A Slim Framework skeleton application for rapid development",
-    "keywords": ["microframework", "rest", "router", "psr7"],
-    "homepage": "http://github.com/slimphp/Slim-Skeleton",
+    "name": "slim-framework_doctrine_mini_web-service",
+    "description": "A mini slim web-service that includes doctrine ORM and JsonWebToken Authentification method.",
+    "keywords": ["microframework", "rest", "router", "psr7", "doctrine", "jwt"],
+    "homepage": "http://github.com/meshredded/slim-framework_doctrine_mini_web-service",
     "license": "MIT",
     "authors": [
         {
-            "name": "Josh Lockhart",
-            "email": "info@joshlockhart.com",
-            "homepage": "http://www.joshlockhart.com/"
+            "name": "Akram MECHERI",
+            "email": "mecheri.akram@gmail.com",
+            "homepage": "http://www.mecheri.altervista.org/"
         }
     ],
     "require": {
@@ -23,7 +23,8 @@
         "doctrine/dbal": "*",
         "doctrine/orm": "*",
         "doctrine/doctrine-bundle": "*",
-        "firebase/php-jwt": "^4.0"
+        "firebase/php-jwt": "^4.0",
+        "palanik/corsslim": "dev-slim3"
 
     },
     "autoload": {
