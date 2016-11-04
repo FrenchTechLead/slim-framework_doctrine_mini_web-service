@@ -7,6 +7,18 @@ use \App\Controllers\JWTController as JWTController;
 
 $public_routes = $settings["settings"]["public_routes"];
 
+//Cross-Origin-middle-ware
+$corsOptions = array(
+    "origin" => "*",
+    "exposeHeaders" => array("Authorization","Content-Type","Access-Control-Expose-Headers", "X-Requested-With", "X-authentication", "X-client"),
+    "allowMethods" => array('GET', 'POST', 'PUT', 'DELETE', 'OPTIONS')
+);
+$cors = new \CorsSlim\CorsSlim($corsOptions);
+
+$app->add($cors);
+
+
+//JsonWebToken middleWare
 $app->add(function (Request $request,Response $response, $next) use ($app, $public_routes){
 
     $route = $request->getRequestTarget(); // these routes don't need Authentification

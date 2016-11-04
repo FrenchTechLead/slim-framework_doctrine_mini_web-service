@@ -25,7 +25,7 @@ class AuthentificationController extends Controller
         $usersEntity = $em->getRepository("App\Entities\User");
         /** @var User $user */
         $user = $usersEntity->findBy(array("email"=>$email, "password"=>$pass))[0];
-        if($user == null)return $response->withJson(array("connection"=>"fail", "error"=>"bad email or password"),403);
+        if($user == null)return $response->withJson(array("connection"=>"fail", "error"=>"Mauvais email ou mot de passe"),403);
         $token = JWTController::createToken($user);
         $responseArray = array("connection"=>"success");
         if ($user->getIs_superuser() == 0){ // it's not a superuser
