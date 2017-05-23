@@ -1,84 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ad4e86c9-e667-4861-9ef4-01512350ad1e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/JSONStream/test/fixtures/all_npm.json" afterPath="$PROJECT_DIR$/node_modules/JSONStream/test/fixtures/all_npm.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/adm-zip/README.md" afterPath="$PROJECT_DIR$/node_modules/adm-zip/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/adm-zip/adm-zip.js" afterPath="$PROJECT_DIR$/node_modules/adm-zip/adm-zip.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/adm-zip/headers/index.js" afterPath="$PROJECT_DIR$/node_modules/adm-zip/headers/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/adm-zip/methods/deflater.js" afterPath="$PROJECT_DIR$/node_modules/adm-zip/methods/deflater.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/adm-zip/util/errors.js" afterPath="$PROJECT_DIR$/node_modules/adm-zip/util/errors.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/archiver/lib/archiver.js" afterPath="$PROJECT_DIR$/node_modules/archiver/lib/archiver.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/archiver/lib/plugins/json.js" afterPath="$PROJECT_DIR$/node_modules/archiver/lib/plugins/json.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/big-integer/.npmignore" afterPath="$PROJECT_DIR$/node_modules/big-integer/.npmignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/big-integer/BigInteger.js" afterPath="$PROJECT_DIR$/node_modules/big-integer/BigInteger.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/browserify/test/ignore.js" afterPath="$PROJECT_DIR$/node_modules/browserify/test/ignore.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/compress-commons/README.md" afterPath="$PROJECT_DIR$/node_modules/compress-commons/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/compress-commons/lib/archivers/zip/constants.js" afterPath="$PROJECT_DIR$/node_modules/compress-commons/lib/archivers/zip/constants.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/compress-commons/lib/archivers/zip/zip-archive-entry.js" afterPath="$PROJECT_DIR$/node_modules/compress-commons/lib/archivers/zip/zip-archive-entry.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/compress-commons/lib/archivers/zip/zip-archive-output-stream.js" afterPath="$PROJECT_DIR$/node_modules/compress-commons/lib/archivers/zip/zip-archive-output-stream.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/compress-commons/lib/compress-commons.js" afterPath="$PROJECT_DIR$/node_modules/compress-commons/lib/compress-commons.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-common/src/CordovaLogger.js" afterPath="$PROJECT_DIR$/node_modules/cordova-common/src/CordovaLogger.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-lib/node_modules/big-integer/README.md" afterPath="$PROJECT_DIR$/node_modules/cordova-lib/node_modules/big-integer/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-lib/node_modules/hawk/.travis.yml" afterPath="$PROJECT_DIR$/node_modules/cordova-lib/node_modules/hawk/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-lib/node_modules/xmldom/dom-parser.js" afterPath="$PROJECT_DIR$/node_modules/cordova-lib/node_modules/xmldom/dom-parser.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/cordova-lib/src/plugman/platforms/webos.js" afterPath="$PROJECT_DIR$/node_modules/cordova-lib/src/plugman/platforms/webos.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/crc32-stream/README.md" afterPath="$PROJECT_DIR$/node_modules/crc32-stream/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/hoek/.travis.yml" afterPath="$PROJECT_DIR$/node_modules/hoek/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/hoek/test/escaper.js" afterPath="$PROJECT_DIR$/node_modules/hoek/test/escaper.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/insight/node_modules/cryptiles/.travis.yml" afterPath="$PROJECT_DIR$/node_modules/insight/node_modules/cryptiles/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/insight/node_modules/hawk/README.md" afterPath="$PROJECT_DIR$/node_modules/insight/node_modules/hawk/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/insight/node_modules/hawk/dist/client.js" afterPath="$PROJECT_DIR$/node_modules/insight/node_modules/hawk/dist/client.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/insight/node_modules/hawk/lib/client.js" afterPath="$PROJECT_DIR$/node_modules/insight/node_modules/hawk/lib/client.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/insight/node_modules/hawk/lib/index.js" afterPath="$PROJECT_DIR$/node_modules/insight/node_modules/hawk/lib/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/insight/node_modules/hawk/lib/server.js" afterPath="$PROJECT_DIR$/node_modules/insight/node_modules/hawk/lib/server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/insight/node_modules/hawk/test/client.js" afterPath="$PROJECT_DIR$/node_modules/insight/node_modules/hawk/test/client.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/insight/node_modules/hawk/test/index.js" afterPath="$PROJECT_DIR$/node_modules/insight/node_modules/hawk/test/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/insight/node_modules/hawk/test/server.js" afterPath="$PROJECT_DIR$/node_modules/insight/node_modules/hawk/test/server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/json-schema/draft-00/links" afterPath="$PROJECT_DIR$/node_modules/json-schema/draft-00/links" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/json-schema/draft-00/schema" afterPath="$PROJECT_DIR$/node_modules/json-schema/draft-00/schema" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/json-schema/draft-01/hyper-schema" afterPath="$PROJECT_DIR$/node_modules/json-schema/draft-01/hyper-schema" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/json-schema/draft-01/json-ref" afterPath="$PROJECT_DIR$/node_modules/json-schema/draft-01/json-ref" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/json-schema/draft-03/examples/calendar" afterPath="$PROJECT_DIR$/node_modules/json-schema/draft-03/examples/calendar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/json-schema/draft-03/examples/geo" afterPath="$PROJECT_DIR$/node_modules/json-schema/draft-03/examples/geo" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/json-schema/draft-03/hyper-schema" afterPath="$PROJECT_DIR$/node_modules/json-schema/draft-03/hyper-schema" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/json-schema/draft-03/json-ref" afterPath="$PROJECT_DIR$/node_modules/json-schema/draft-03/json-ref" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/json-schema/draft-03/schema" afterPath="$PROJECT_DIR$/node_modules/json-schema/draft-03/schema" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/json-schema/draft-zyp-json-schema-04.xml" afterPath="$PROJECT_DIR$/node_modules/json-schema/draft-zyp-json-schema-04.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/json-schema/lib/validate.js" afterPath="$PROJECT_DIR$/node_modules/json-schema/lib/validate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/json-schema/test/tests.js" afterPath="$PROJECT_DIR$/node_modules/json-schema/test/tests.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/multiparty/test/fixture/http/encoding/beta-sticker-1.png.http" afterPath="$PROJECT_DIR$/node_modules/multiparty/test/fixture/http/encoding/beta-sticker-1.png.http" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/multiparty/test/fixture/http/no-filename/filename-name.http" afterPath="$PROJECT_DIR$/node_modules/multiparty/test/fixture/http/no-filename/filename-name.http" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/multiparty/test/fixture/http/special-chars-in-filename/osx-firefox-3.6.http" afterPath="$PROJECT_DIR$/node_modules/multiparty/test/fixture/http/special-chars-in-filename/osx-firefox-3.6.http" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/multiparty/test/fixture/http/workarounds/missing-hyphens1.http" afterPath="$PROJECT_DIR$/node_modules/multiparty/test/fixture/http/workarounds/missing-hyphens1.http" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/multiparty/test/fixture/http/workarounds/missing-hyphens2.http" afterPath="$PROJECT_DIR$/node_modules/multiparty/test/fixture/http/workarounds/missing-hyphens2.http" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/npm/node_modules/node-gyp/gyp/samples/samples.bat" afterPath="$PROJECT_DIR$/node_modules/npm/node_modules/node-gyp/gyp/samples/samples.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/npm/node_modules/read-package-json/node_modules/json-parse-helpfulerror/node_modules/jju/LICENSE" afterPath="$PROJECT_DIR$/node_modules/npm/node_modules/read-package-json/node_modules/json-parse-helpfulerror/node_modules/jju/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/hawk/README.md" afterPath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/hawk/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/hawk/example/usage.js" afterPath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/hawk/example/usage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/hawk/lib/index.js" afterPath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/hawk/lib/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/hawk/lib/server.js" afterPath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/hawk/lib/server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/cryptiles/.npmignore" afterPath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/hawk/node_modules/cryptiles/.npmignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/hawk/test/readme.js" afterPath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/hawk/test/readme.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/hawk/test/server.js" afterPath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/hawk/test/server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/hawk/test/uri.js" afterPath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/hawk/test/uri.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/http-signature/node_modules/jsprim/node_modules/json-schema/README.md" afterPath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/http-signature/node_modules/jsprim/node_modules/json-schema/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/http-signature/node_modules/jsprim/node_modules/json-schema/draft-00/schema" afterPath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/http-signature/node_modules/jsprim/node_modules/json-schema/draft-00/schema" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/http-signature/node_modules/jsprim/node_modules/json-schema/draft-02/json-ref" afterPath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/http-signature/node_modules/jsprim/node_modules/json-schema/draft-02/json-ref" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/http-signature/node_modules/jsprim/node_modules/json-schema/draft-02/schema" afterPath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/http-signature/node_modules/jsprim/node_modules/json-schema/draft-02/schema" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/http-signature/node_modules/jsprim/node_modules/json-schema/draft-03/examples/address" afterPath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/http-signature/node_modules/jsprim/node_modules/json-schema/draft-03/examples/address" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/http-signature/node_modules/jsprim/node_modules/json-schema/draft-03/hyper-schema" afterPath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/http-signature/node_modules/jsprim/node_modules/json-schema/draft-03/hyper-schema" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/http-signature/node_modules/jsprim/node_modules/json-schema/draft-03/schema" afterPath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/http-signature/node_modules/jsprim/node_modules/json-schema/draft-03/schema" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/http-signature/node_modules/jsprim/node_modules/json-schema/draft-04/links" afterPath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/http-signature/node_modules/jsprim/node_modules/json-schema/draft-04/links" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/http-signature/node_modules/jsprim/node_modules/json-schema/draft-04/schema" afterPath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/http-signature/node_modules/jsprim/node_modules/json-schema/draft-04/schema" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/jodid25519/LICENSE" afterPath="$PROJECT_DIR$/node_modules/npm/node_modules/request/node_modules/http-signature/node_modules/sshpk/node_modules/jodid25519/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/plist/dist/plist-parse.js" afterPath="$PROJECT_DIR$/node_modules/plist/dist/plist-parse.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/valid-identifier/readme.md" afterPath="$PROJECT_DIR$/node_modules/valid-identifier/readme.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/valid-identifier/tests/valid-identifier-spec.js" afterPath="$PROJECT_DIR$/node_modules/valid-identifier/tests/valid-identifier-spec.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/xmldom/sax.js" afterPath="$PROJECT_DIR$/node_modules/xmldom/sax.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/zip-stream/README.md" afterPath="$PROJECT_DIR$/node_modules/zip-stream/README.md" />
-    </list>
+    <list default="true" id="ad4e86c9-e667-4861-9ef4-01512350ad1e" name="Default" comment="" />
     <ignored path="middleWareNew.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -170,9 +93,6 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/node_modules" />
-  </component>
   <component name="PhpServers">
     <servers />
   </component>
@@ -180,7 +100,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="690" />
+    <option name="height" value="686" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -226,27 +146,27 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="middleWareNew" />
+              <option name="myItemId" value="slim-framework_doctrine_mini_web-service" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="middleWareNew" />
+              <option name="myItemId" value="slim-framework_doctrine_mini_web-service" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="middleWareNew" />
+              <option name="myItemId" value="slim-framework_doctrine_mini_web-service" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -1338,6 +1258,7 @@
       <workItem from="1478190438820" duration="231000" />
       <workItem from="1478300482492" duration="1885000" />
       <workItem from="1478303964205" duration="139000" />
+      <workItem from="1495577026057" duration="28000" />
     </task>
     <task id="LOCAL-00001" summary="like before">
       <created>1476398324169</created>
@@ -1490,7 +1411,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174359000" />
+    <option name="totallyTimeSpent" value="174387000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1502,14 +1423,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="690" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="686" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21728595" sideWeight="0.8089431" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22051696" sideWeight="0.8089431" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24851485" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42976588" sideWeight="0.5056543" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42929292" sideWeight="0.5088853" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42976588" sideWeight="0.49434572" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42929292" sideWeight="0.4911147" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23244147" sideWeight="0.48626816" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13897763" sideWeight="0.1910569" order="2" side_tool="true" content_ui="tabs" />
@@ -1608,13 +1529,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/bin/doctrine">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/bin/doctrine" />
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/basic.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2160">
@@ -1622,13 +1537,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/bin/doctrine.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/bin/doctrine.php" />
     <entry file="file://$PROJECT_DIR$/tests/Functional/BaseTestCase.php" />
     <entry file="file://$PROJECT_DIR$/class-loader.php" />
     <entry file="file://$PROJECT_DIR$/db/db.sqlite3">
@@ -1639,34 +1548,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/toto.txt" />
-    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_namespaces.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/doctrine/doctrine-bundle/Tests/DependencyInjection/AbstractDoctrineExtensionTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="488" column="11" selection-start-line="488" selection-start-column="11" selection-end-line="488" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/ClassLoader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" />
+    <entry file="file://$PROJECT_DIR$/vendor/autoload.php" />
+    <entry file="file://$PROJECT_DIR$/vendor/doctrine/doctrine-bundle/Tests/DependencyInjection/AbstractDoctrineExtensionTest.php" />
+    <entry file="file://$PROJECT_DIR$/vendor/composer/ClassLoader.php" />
     <entry file="file://$PROJECT_DIR$/templates/toto.txt" />
     <entry file="file://$PROJECT_DIR$/public/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
@@ -1683,13 +1568,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.phtml" />
-    <entry file="file://$PROJECT_DIR$/logs/app.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/app.log" />
     <entry file="file://$PROJECT_DIR$/templates/js/jquery.js" />
     <entry file="file://$PROJECT_DIR$/src/App/Controllers/JWTImplementation.php" />
     <entry file="file://$PROJECT_DIR$/tests/Functional/HomepageTest.php" />
@@ -1718,27 +1597,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_psr4.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_static.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3315">
-          <caret line="238" column="10" selection-start-line="238" selection-start-column="10" selection-end-line="238" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_real.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_psr4.php" />
+    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_static.php" />
+    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_real.php" />
     <entry file="file://$PROJECT_DIR$/src/App/Controllers/AuthentificationController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
